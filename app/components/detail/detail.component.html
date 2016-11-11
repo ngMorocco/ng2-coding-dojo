@@ -1,8 +1,17 @@
 <div *ngIf="hero">
     <h2>{{hero.name}} details!</h2>
-    <div><label>id: </label>{{hero.id}}</div>
-    <div>
-      <label>name: </label> {{hero.name}} <br>
-      <label>Short Bio: </label> {{hero.bio}}
-    </div>
+    <table>
+        <tr>
+            <td>
+                <img src="assets/{{hero.id}}.png" style="width: 100px" />
+            </td>
+            <td>
+                <div><label>id: </label>{{hero.id}}</div>
+                <div>
+                    <label>name: </label> {{hero.name}} <br>
+                    <label>Short Bio: </label> {{hero.bio}}
+                </div>
+            </td>
+        </tr>
+    </table>
 </div>
