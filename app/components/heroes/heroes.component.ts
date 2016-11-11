@@ -1,47 +1,31 @@
-import { Component, OnInit  } from '@angular/core';
-import { Hero } from './../../models/hero';
-import { HEROES } from './../../mock';
-import { HeroService } from '../../services/hero.service';
+import {Component, OnInit} from '@angular/core';
+import {Hero} from './../../models/hero';
+import {HEROES} from './../../mock';
+import {HeroService} from '../../services/hero.service';
 
 @Component({
-  selector: 'heroes',
-  styles: [`
-  .selected {
-    background-color: #CFD8DC !important;
-  
-  }
- .heroes li {
-    cursor: pointer;}
-`],
-
-  template: `
-<div class="container">
-  <h2>Heroes List</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"  (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-   <span class="badge">{{hero.id}}</span>  {{hero.name}}
-  </li>
-</ul> <div>
- <detail [hero]="selectedHero"></detail>
-  `
+    selector: 'heroes',
+    styleUrls: ['./app/components/heroes/heroes.component.css'],
+    templateUrl: './app/components/heroes/heroes.component.html'
 })
 export class HeroesComponent implements OnInit {
-  
-  constructor(public heroService: HeroService) { }
 
-  heroes = HEROES ;
-  selectedHero: Hero;
+    constructor(public heroService:HeroService) {
+    }
+
+    heroes = HEROES;
+    selectedHero:Hero;
 
 
     getHeroes() {
-    this.heroService.getHeroes();
-  }
-  ngOnInit() {
-    this.getHeroes();
-  }
+        this.heroService.getHeroes();
+    }
 
-
-  onSelect(hero: Hero) {
-  this.selectedHero = hero;
+    ngOnInit() {
+        this.getHeroes();
+    }
+  
+    onSelect(hero:Hero) {
+        this.selectedHero = hero;
+    }
 }
- }
