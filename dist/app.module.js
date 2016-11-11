@@ -10,14 +10,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var router_1 = require('@angular/router');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+var heroes_component_1 = require('./heroes.component');
+var detail_component_1 = require('./detail.component');
+var home_component_1 = require('./home.component');
+var contact_component_1 = require('./contact.component');
+var hero_service_1 = require('./hero.service');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
+            imports: [platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                router_1.RouterModule.forRoot([
+                    {
+                        path: 'heroes',
+                        component: heroes_component_1.HeroesComponent
+                    },
+                    {
+                        path: 'home',
+                        component: home_component_1.HomeComponent
+                    },
+                    {
+                        path: 'contact',
+                        component: contact_component_1.ContactComponent
+                    },
+                    {
+                        path: '',
+                        redirectTo: '/home',
+                        pathMatch: 'full'
+                    }
+                ])
+            ],
+            declarations: [app_component_1.AppComponent, detail_component_1.DetailComponent, heroes_component_1.HeroesComponent, home_component_1.HomeComponent, contact_component_1.ContactComponent],
+            providers: [
+                hero_service_1.HeroService
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

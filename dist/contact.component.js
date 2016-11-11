@@ -9,18 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Heroes don't always wear caps";
+var hero_1 = require('./hero');
+var ContactComponent = (function () {
+    function ContactComponent() {
+        this.contact = new hero_1.Hero(0, '', '');
+        this.submitted = false;
     }
-    AppComponent = __decorate([
+    ContactComponent.prototype.onSubmit = function () { this.submitted = true; };
+    ContactComponent.prototype.onNewcontact = function () {
+        this.contact = new hero_1.Hero(0, this.contact.name, this.contact.bio);
+    };
+    ContactComponent.prototype.ngOnInit = function () {
+        this.contact = { id: 0, name: '', bio: '' };
+    };
+    ContactComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <a routerLink=\"/home\">Home</a>\n    <a routerLink=\"/heroes\">Our Heroes</a>\n    <a routerLink=\"/contact\">contact Us</a>\n    <router-outlet></router-outlet>\n  "
+            moduleId: module.id,
+            selector: 'join',
+            templateUrl: '../app/contact.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ContactComponent);
+    return ContactComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ContactComponent = ContactComponent;
+//# sourceMappingURL=contact.component.js.map
