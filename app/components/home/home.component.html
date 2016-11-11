@@ -1,8 +1,6 @@
+<h2>Top heroes</h2>
 <div class="jumbotron" style="margin:20px">
-<div style="margin:10px">
-  <h2>Hello, world!</h2>
-  <p>We are a nonprofit organization compassionately dedicated to gathering  those who were oppressed and banned from coding with angular2
-   along with educating others about the importance of the framework and why we are using it.... Doors will be opened soon for those interested in joining us.
-</p>
-</div>
+    <div class="hero" *ngFor="let hero of heroes">
+      <img src="assets/{{hero.id}}.png" style="width: 300px;" />
+    </div>
 </div>
