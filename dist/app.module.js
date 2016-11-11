@@ -13,11 +13,11 @@ var platform_browser_1 = require('@angular/platform-browser');
 var router_1 = require('@angular/router');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
-var heroes_component_1 = require('./heroes.component');
-var detail_component_1 = require('./detail.component');
-var home_component_1 = require('./home.component');
-var contact_component_1 = require('./contact.component');
-var hero_service_1 = require('./hero.service');
+var heroes_component_ts_1 = require('./components/heroes/heroes.component.ts');
+var detail_component_ts_1 = require('components/detail/detail.component.ts');
+var home_component_ts_1 = require('components/home/home.component.ts');
+var contact_component_ts_1 = require('components/contact/contact.component.ts');
+var hero_service_ts_1 = require('./services/hero.service.ts');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,15 +28,15 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot([
                     {
                         path: 'heroes',
-                        component: heroes_component_1.HeroesComponent
+                        component: heroes_component_ts_1.HeroesComponent
                     },
                     {
                         path: 'home',
-                        component: home_component_1.HomeComponent
+                        component: home_component_ts_1.HomeComponent
                     },
                     {
                         path: 'contact',
-                        component: contact_component_1.ContactComponent
+                        component: contact_component_ts_1.ContactComponent
                     },
                     {
                         path: '',
@@ -45,9 +45,9 @@ var AppModule = (function () {
                     }
                 ])
             ],
-            declarations: [app_component_1.AppComponent, detail_component_1.DetailComponent, heroes_component_1.HeroesComponent, home_component_1.HomeComponent, contact_component_1.ContactComponent],
+            declarations: [app_component_1.AppComponent, detail_component_ts_1.DetailComponent, heroes_component_ts_1.HeroesComponent, home_component_ts_1.HomeComponent, contact_component_ts_1.ContactComponent],
             providers: [
-                hero_service_1.HeroService
+                hero_service_ts_1.HeroService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

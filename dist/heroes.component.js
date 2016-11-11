@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var mock_1 = require('./mock');
-var hero_service_1 = require('./hero.service');
+var hero_service_ts_1 = require('./services/hero.service.ts');
 var HeroesComponent = (function () {
     function HeroesComponent(heroService) {
         this.heroService = heroService;
@@ -31,9 +31,10 @@ var HeroesComponent = (function () {
             styles: ["\n  .selected {\n    background-color: #CFD8DC !important;\n  \n  }\n .heroes li {\n    cursor: pointer;}\n"],
             template: "\n<div class=\"container\">\n  <h2>Heroes List</h2>\n<ul class=\"heroes\">\n  <li *ngFor=\"let hero of heroes\"  (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectedHero\">\n   <span class=\"badge\">{{hero.id}}</span>  {{hero.name}}\n  </li>\n</ul> <div>\n <detail [hero]=\"selectedHero\"></detail>\n  "
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService])
+        __metadata('design:paramtypes', [(typeof (_a = typeof hero_service_ts_1.HeroService !== 'undefined' && hero_service_ts_1.HeroService) === 'function' && _a) || Object])
     ], HeroesComponent);
     return HeroesComponent;
+    var _a;
 }());
 exports.HeroesComponent = HeroesComponent;
 //# sourceMappingURL=heroes.component.js.map

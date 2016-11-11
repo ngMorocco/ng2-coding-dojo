@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
-import { HeroesComponent }   from './heroes.component';
-import { DetailComponent } from './detail.component';
-import { HomeComponent } from './home.component';
-import { ContactComponent } from './contact.component';
-import { HeroService }         from './hero.service';
+import { HeroesComponent }   from './components/heroes/heroes.component.ts';
+import { DetailComponent } from 'components/detail/detail.component.ts';
+import { HomeComponent } from 'components/home/home.component.ts';
+import { ContactComponent } from 'components/contact/contact.component.ts';
+import { HeroService }         from './services/hero.service.ts';
 @NgModule({
   imports:      [ BrowserModule,
   FormsModule,
