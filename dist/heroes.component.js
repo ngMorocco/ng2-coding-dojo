@@ -28,7 +28,8 @@ var HeroesComponent = (function () {
     HeroesComponent = __decorate([
         core_1.Component({
             selector: 'heroes',
-            template: "\n<div class=\"container\">\n  <h2>My Heroes</h2>\n<ul class=\"heroes\">\n  <li *ngFor=\"let hero of heroes\"  (click)=\"onSelect(hero)\" [class.active]=\"hero === selectedHero\">\n   <span class=\"badge\">{{hero.id}}</span>  {{hero.name}}\n  </li>\n</ul> <div>\n <detail [hero]=\"selectedHero\"></detail>\n  "
+            styles: ["\n  .selected {\n    background-color: #CFD8DC !important;\n  \n  }\n .heroes li {\n    cursor: pointer;}\n"],
+            template: "\n<div class=\"container\">\n  <h2>Heroes List</h2>\n<ul class=\"heroes\">\n  <li *ngFor=\"let hero of heroes\"  (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectedHero\">\n   <span class=\"badge\">{{hero.id}}</span>  {{hero.name}}\n  </li>\n</ul> <div>\n <detail [hero]=\"selectedHero\"></detail>\n  "
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService])
     ], HeroesComponent);

@@ -5,11 +5,11 @@
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
   <div class="form-group">
    
-    <input type="text" class="form-control" name="name" [(ngModel)]="contact.name" placeholder="..." >
+    <input type="text" class="form-control" name="name" [(ngModel)]="contact.name" placeholder="Your Name" required>
   </div>
   <div class="form-group">
    
-  <input type="text" class="form-control"  name="bio" [(ngModel)]="contact.bio" placeholder="..." >
+  <input type="text" class="form-control"  name="bio" [(ngModel)]="contact.bio" placeholder="your message" required >
   </div>
 
   <button class="btn btn-default" (click)='onNewcontact()'>Submit</button>
@@ -21,6 +21,6 @@
 </div>
 
 
-<div [hidden]="!submitted">
-    <h4>YThanks for reaching out <b>{{ contact.name }}</b> ... very interesting bio..<b>{{ contact.bio }}</b> we get in touch soon .. expect us ! </h4>
+<div [hidden]="!submitted" style="margin:100px">
+    <h4>Thanks for reaching out <b>{{ contact.name }}</b> ... very interesting feedback..<b>{{ contact.bio }}</b> we get in touch soon .. expect us ! </h4>
 </div>
