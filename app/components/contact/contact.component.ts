@@ -2,9 +2,8 @@ import {Component} from '@angular/core';
 import {Hero}    from '../../models/hero';
 
 @Component({
-    moduleId: module.id,
     selector: 'join',
-    templateUrl: '../app/contact.component.html'
+    templateUrl: './app/components/contact/contact.component.html'
 })
 export class ContactComponent {
     contact = new Hero(0, '', '');

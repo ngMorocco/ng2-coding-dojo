@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'dashboard',
-  templateUrl: '../app/home.component.html'
+  templateUrl: './app/components/home/home.component.html'
 })
 export class HomeComponent { }
